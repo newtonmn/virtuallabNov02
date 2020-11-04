@@ -1,0 +1,4 @@
+spring:
+  application:
+    name: tax-service
+      cloud:    config:      uri: http://localhost:8110       
