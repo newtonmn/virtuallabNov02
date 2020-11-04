@@ -1,4 +1,4 @@
-spring:  application:    name: tax-service      datasource:    url: jdbc:h2:mem:taxdb    driver-class-name: org.h2.Driver    username: ibm    password: ibm     h2:    console:      enabled: true    server:  port: 8090
+spring:  application:    name: tax-service  zipkin:    base-url: http://192.168.99.100:9411  sleuth:    sampler:      probability: 1.0    trace-id128: true            datasource:    url: jdbc:h2:mem:taxdb    driver-class-name: org.h2.Driver    username: ibm    password: ibm     h2:    console:      enabled: true    server:  port: 8090
 
 eureka:
   instance:
@@ -6,4 +6,4 @@ eureka:
     
   client:
     service-url:
-      defaultZone:  http://localhost:8100/eureka
+      defaultZone:  http://localhost:8100/eureka                
