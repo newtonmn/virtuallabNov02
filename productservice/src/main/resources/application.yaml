@@ -1,19 +1,12 @@
 spring:
-  datasource:
-    url: jdbc:h2:mem:productdb
-    driver-class-name: org.h2.Driver
-    username: ibm
-    password: ibm
-     h2:    console:      enabled: true  application:    name: product-service  zipkin:    base-url: http://192.168.99.100:9411  sleuth:    sampler:      probability: 1.0
+  application:    name: product-service  zipkin:    base-url: http://192.168.99.100:9411  sleuth:    sampler:      probability: 1.0
     trace-id128: true
       
 server:  port: 8088
   
   
 management:  endpoints:    web:      exposure:        include: "*"       
-eureka:  instance:    instance-id: ${spring.application.name}:${random.int}
-    
-  client:    service-url:      defaultZone:  http://localhost:8100/eureka
+
       
       
       
