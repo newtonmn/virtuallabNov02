@@ -5,10 +5,12 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ibm.taxservice.service.TaxService;
 
+@RequestMapping("tax")
 @RefreshScope
 @RestController
 public class TaxController {
@@ -20,7 +22,7 @@ public class TaxController {
 	private String message;
 	
 	
-	@GetMapping("/tax/{name}")
+	@GetMapping("/{name}")
 	public Double tax(@PathVariable(value="name") String name) {
 		
 	return taxService.tax(name);
@@ -28,6 +30,8 @@ public class TaxController {
 	
 	@GetMapping("/message")
 	public String msg() {
+		
+		System.out.println("welcome to tax service");
 		
 		return this.message;
 	}
