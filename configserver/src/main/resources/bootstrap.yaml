@@ -2,6 +2,9 @@ spring:
   application:
     name: config-server
     
-  cloud:    config:      server:        git:          uri: C:\labs\gitrepo
+  cloud:    config:      server:        git:          uri: ${git.uri:https://github.com/newtonmn/gitreponov.git}
+          username: newtonmn
+          password: ${password}
+          clone-on-start: true
           
 server:  port: 8110
