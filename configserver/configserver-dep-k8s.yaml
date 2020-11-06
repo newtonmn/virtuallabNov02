@@ -1,0 +1,53 @@
+--- 
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  labels: 
+    app: configserver
+    version: v1
+  name: configserver
+spec: 
+  replicas: 1
+  selector: 
+    matchLabels: 
+      app: configserver
+      version: v1
+  strategy: 
+    rollingUpdate: 
+      maxSurge: 1
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template: 
+    metadata: 
+      labels: 
+        app: configserver
+        version: v1
+    spec: 
+      containers: 
+        - 
+
+          image: "newtonmn/configserverv2:latest"
+          imagePullPolicy: Always
+          name: configserver
+          ports: 
+            - 
+              containerPort: 8110
+              hostPort: 8110
+              name: httpport
+          env: 
+            - 
+              name: git.uri
+              value: https://github.com/newtonmn/gitreponov.git
+            - 
+              name: git.username
+              value: newtonmn@gmail.com
+            - 
+              name: git.password
+              value: xx
+
+            - 
+              name: rabbitmq.host
+              value: rabbitmq-master
+            - 
+              name: rabbitmq.port
+              value: "5672"
