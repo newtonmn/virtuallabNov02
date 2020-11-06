@@ -1,0 +1,18 @@
+apiVersion: v1
+clusters:
+- cluster:
+    insecure-skip-tls-verify: true
+    server: https://192.168.56.101:6443
+  name: k8scluster
+contexts:
+- context:
+    cluster: k8scluster
+    user: k8scredentials
+  name: k8scontext
+current-context: k8scontext
+kind: Config
+preferences: {}
+users:
+- name: k8scredentials
+  user:
+    token: eyJhbGciOiJSUzI1NiIsImtpZCI6ImtmR2tZZ00wZlFJaEFHX1Fya19Zb1l1NzRLUGpjWW04QXFKaTZhV2VQaUUifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJhZG1pbi11c2VyLXRva2VuLXg5cWpzIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6ImFkbWluLXVzZXIiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI4MjkxMDI3OC02MTgyLTRjZTYtYmI0Zi02OTg2ZGY4OGRjYTEiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZS1zeXN0ZW06YWRtaW4tdXNlciJ9.n2zQmQWDx4fX7bZmdXioMq0yfo6UoEQZ3hHg-M2QjNg5Nm0zQciqpIpnojDFZgXC_XAKmN99R5He_6qZiBSC36MffTr1O-_KUWM9Hrm3_cvSZKZlw_m4m1HcU0-Uywbh2k5isLadVZsNPmx7YHDoW_Nmt4nxQr9P9Cfxgt9VeRdfI5RyzrXkHLKsgNcMeWY-nMpkIftjsqNzFq8qoo8_HCB0YEOKJxrhqPkzI39RRnX4Ue20dm5Wuknwm1GzuId9FuO-CXkXjHHIwPINx9UQqT6OsMBBVetVjwAEMvk3SFWkmAu2N3jR8RmjNgwokoT4WauQdU-ZCRJf5e8KAmDgeQ
