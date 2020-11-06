@@ -1,0 +1,19 @@
+--- 
+apiVersion: v1
+kind: Service
+metadata: 
+  labels: 
+    app: myfirstproject
+    version: v1
+  name: myfirstproject
+spec: 
+  ports: 
+    - 
+      name: http
+      port: 8082
+      targetPort: 8082
+
+  selector: 
+    app: myfirstproject
+    version: v1
+  type: NodePort
